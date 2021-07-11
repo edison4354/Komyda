@@ -1,0 +1,13 @@
+.Title h1 {
+  margin-top: 0px;
+  text-align: center;
+  color: #ffff;
+}
+
+h1 {
+  width: 30%;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
