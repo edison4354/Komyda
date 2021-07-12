@@ -23,6 +23,7 @@ npm install
 ```
 
 4. Create an Atlas URI connection parameter in `server/config.env` with your MongoDB Atlas URI:
+
 See https://docs.mongodb.com/drivers/node/current/quick-start/ for more details
 ```
 ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
