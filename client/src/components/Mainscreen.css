@@ -1,0 +1,105 @@
+.Mainscreen {
+  height: 100vh;
+  /* background-color: #2f455c;*/
+  background-image: url("https://images.wallpaperscraft.com/image/surface_red_texture_171918_3840x2160.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #ffffff;
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: #000000;
+}
+
+.searchButton {
+  width: 60px;
+  height: 46px;
+  border: 1px solid #000000;
+  background: #000000;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 35px 35px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.locationButton {
+  width: 40px;
+  height: 46px;
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  text-align: center;
+  color: #fff;
+  border-radius: 35px 0 0 35px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Motto {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.Mainscreen h1 {
+  color: #ffff;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Mainscreen h5 {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 35px 35px 35px 35px;
+
+  resize: both;
+  color: #be1919;
+  position: absolute;
+  top: 3%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-row: 1 / span 2;
+}
