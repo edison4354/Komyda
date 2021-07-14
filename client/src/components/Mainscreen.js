@@ -12,6 +12,7 @@ const Mainscreen = () => {
         <div>
             <div className="Mainscreen">
                 <h1>{title.toUpperCase()}</h1>
+                <Login />
             </div>
             <Searchbar />
             <Card />
@@ -40,3 +41,10 @@ function Searchbar() {
     )
 }
 
+function Login() {
+    return(
+        <div className="Loginn">
+            <a href="Sign-in"><h2>Sign in</h2></a>
+        </div>
+    )
+}

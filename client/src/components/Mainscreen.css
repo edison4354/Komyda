@@ -64,7 +64,20 @@
 .Mainscreen h1 {
   color: #ffff;
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Mainscreen h2 {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 35px 35px 35px 35px;
+
+  resize: both;
+  color: rgb(24, 73, 114);
+  position: absolute;
+  top: 3%;
+  left: 90%;
   transform: translate(-50%, -50%);
 }
