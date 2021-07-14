@@ -29,7 +29,6 @@ function CardList() {
             <div class="item1"><Card /></div>
             <div class="item2"><Card /></div>
             <div class="item3"><Card /></div>
-            <div class="item3"><Card /></div>
         </div>
     )
 }
@@ -55,7 +54,7 @@ function Searchbar() {
 function Login() {
     return (
         <div className="Loginn">
-            <a href="Sign-in"><h2>Sign in</h2></a>
+            <a href="Sign-in"><h5>Sign in</h5></a>
         </div>
     )
 }

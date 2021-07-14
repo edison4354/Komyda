@@ -1,6 +1,10 @@
 .Mainscreen {
   height: 100vh;
-  background-color: #2f455c;
+  /* background-color: #2f455c;*/
+  background-image: url("https://images.wallpaperscraft.com/image/surface_red_texture_171918_3840x2160.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .search {
@@ -24,10 +28,10 @@
 }
 
 .searchButton {
-  width: 40px;
+  width: 60px;
   height: 46px;
-  border: 1px solid #1dcdfe;
-  background: #1dcdfe;
+  border: 1px solid #000000;
+  background: #000000;
   text-align: center;
   color: #fff;
   border-radius: 0 35px 35px 0;
@@ -38,7 +42,7 @@
 .locationButton {
   width: 40px;
   height: 46px;
-  border: 3px solid #1dcdfe;
+  border: 3px solid #ffffff;
   background: #ffffff;
   text-align: center;
   color: #fff;
@@ -69,13 +73,13 @@
   transform: translate(-50%, -50%);
 }
 
-.Mainscreen h2 {
+.Mainscreen h5 {
   background-color: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 35px 35px 35px 35px;
 
   resize: both;
-  color: rgb(24, 73, 114);
+  color: #be1919;
   position: absolute;
   top: 3%;
   left: 90%;
@@ -84,7 +88,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
   padding: 10px;
 }
