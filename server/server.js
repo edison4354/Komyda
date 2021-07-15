@@ -1,24 +1,42 @@
-// REQUIRED LIBRARIES
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
+let express = require('express');
+let mongoose = require('mongoose');
+let cors = require('cors');
+let bodyParser = require('body-parser');
+let database = require('./database/db');
 
-// APP SETUP
+
+const userRoute = require('./routes/record.js')
+
+
+mongoose.Promise = global.Promise;
+mongoose.connect(database.db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('Database connected sucessfully!')
+},
+    error => {
+        console.log('Database could not be connected : ' + error)
+    }
+)
+
 const app = express();
-const port = process.env.PORT || 5000;
-
-// MIDDLEWARE
 app.use(cors());
-app.use(express.json());
+app.use('/restaurants', userRoute)
 
 
-// get driver connection
-const dbo = require("./db/conn");
- 
-app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
-  });
-  console.log(`Server is running on port: ${port}`);
+const port = process.env.PORT || 3000;
+const server = app.listen(port, () => {
+    console.log('Connected to port ' + port)
+})
+
+// Error Handling
+app.use((req, res, next) => {
+    next(createError(404));
+});
+
+app.use(function (err, req, res, next) {
+    console.error(err.message);
+    if (!err.statusCode) err.statusCode = 500;
+    res.status(err.statusCode).send(err.message);
 });
