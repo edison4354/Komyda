@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import './Feed.css'
+import axios from 'axios';
 import FoodcardList from './FoodcardList'
-import Offercard from './Offercard';
+import DataTable from './Offercard';
 
-export default function Feed() {
-    return (
-        <form>
-            <div>
-                <Navibar />
-                <FoodcardList />
-                <OffercardList />
-            </div>
-        </form>
-    )
-}
+// export default function Feed() {
+//     return (
+//         <form>
+//             <div>
+//                 <Navibar />
+//                 <FoodcardList />
+//                 <OffercardList />
+//             </div>
+//         </form>
+//     )
+// }
 
 function Navibar() {
     return (
@@ -47,12 +48,43 @@ function Navibar() {
     )
 }
 
-const OffercardList = () => {
-    return (
-        <div className='offerlist'>
-            <Offercard />
-            <Offercard />
-            <Offercard />
-        </div>
-    )
+// const OffercardList = () => {
+//     return (
+//         <div className='offerlist'>
+//           {this.dataTable()}
+//         </div>
+//     )
+// }
+
+export default class Users extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = { usersCollection: [] };
+  }
+
+  componentDidMount() {
+      axios.get('http://localhost:3000/restaurants')
+          .then(res => {
+              this.setState({ usersCollection: res.data });
+          })
+          .catch(function (error) {
+              console.log(error);
+          })
+  }
+
+  dataTable() {
+      return this.state.usersCollection.map((data, i) => {
+          return <DataTable obj={data} key={i} />;
+      });
+  }
+
+  render() {
+      return (
+          <div>
+            <Navibar />
+            {this.dataTable()}
+          </div>
+      )
+  }
 }

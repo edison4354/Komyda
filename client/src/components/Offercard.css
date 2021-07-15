@@ -24,3 +24,8 @@ button:hover,
 a:hover {
   opacity: 0.7;
 }
+
+.img-restaurant {
+  height: 100px;
+  width: 100px;
+}
