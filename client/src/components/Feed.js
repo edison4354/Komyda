@@ -10,7 +10,6 @@ import DataTable from './Offercard';
 //         <form>
 //             <div>
 //                 <Navibar />
-//                 <FoodcardList />
 //                 <OffercardList />
 //             </div>
 //         </form>
@@ -83,6 +82,7 @@ export default class Users extends Component {
       return (
           <div>
             <Navibar />
+            <FoodcardList />
             {this.dataTable()}
           </div>
       )
